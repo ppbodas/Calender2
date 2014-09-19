@@ -1,2 +1,26 @@
-<h1>Pages#calender</h1>
-<p>Find me in app/views/pages/calender.html.erb</p>
+<%=@time.inspect%>
+<table>
+	<tr>
+		<th>Sun</th>
+		<th>Mon</th>
+		<th>Tue</th>
+		<th>Wed</th>
+		<th>Thu</th>
+		<th>Fri</th>
+		<th>Sat</th>
+	</tr>	
+	<%days_in_month = Time.days_in_month(@time.month, @time.year)%>
+	<%date = 0%>
+	<%for i in 1..5%>	
+		<tr>			
+			<td><%=date = date +1%></td>	
+			<td><%=date = date +1%></td>
+			<td><%=date = date +1%></td>
+			<td><%=date = date +1%></td>	
+			<td><%=date = date +1%></td>
+			<td><%=date = date +1%></td>
+			<td><%=date = date +1%></td>				
+		</tr>	
+	<%end%>
+</table>
+
