@@ -1,4 +1,9 @@
-<%=@time.inspect%>
+<%=@time.inspect%> </br>
+<%="Day of week #{@time.wday + 1}"%> </br>
+<%="Last date of month #{@last_date_of_month}"%> </br>
+
+<%=link_to "<<prev", calender_path(:year => @previous_year, :month => @previous_month)%>
+<%=link_to "next>>", calender_path(:year => @next_year, :month => @next_month)%>
 <table>
 	<tr>
 		<th>Sun</th>
@@ -9,18 +14,6 @@
 		<th>Fri</th>
 		<th>Sat</th>
 	</tr>	
-	<%days_in_month = Time.days_in_month(@time.month, @time.year)%>
-	<%date = 0%>
-	<%for i in 1..5%>	
-		<tr>			
-			<td><%=date = date +1%></td>	
-			<td><%=date = date +1%></td>
-			<td><%=date = date +1%></td>
-			<td><%=date = date +1%></td>	
-			<td><%=date = date +1%></td>
-			<td><%=date = date +1%></td>
-			<td><%=date = date +1%></td>				
-		</tr>	
-	<%end%>
+	<%=@str.html_safe%>
 </table>
 
